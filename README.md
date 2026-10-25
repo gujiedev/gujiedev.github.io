@@ -9,18 +9,22 @@
 | 博客框架 | Hexo 7 | 静态站点生成器，模板语法接近 Vue，中文社区成熟 |
 | 托管 | GitHub Pages | 免费，全球可访问 |
 | 部署 | GitHub Actions | push 自动构建，产物推送到 `gh-pages` 分支 |
-| 主题 | landscape（默认） | 够用且清爽，可随时更换 |
+| 主题 | Fluid | 现代化设计，深色模式、代码复制按钮、访客统计开箱即用 |
 | 本地运行 | Node.js 18+ | 本机已装 Node 22 |
+
+> 主题配置在根目录 **`_config.fluid.yml`**（导航栏、头图、副标题、关于页、页脚等都在这里改）， Hexo 主配置仍在 `_config.yml`。换其他主题见 Fluid 文档：https://hexo.fluid-dev.com/docs/
 
 ## 目录结构
 
 ```
 hexo-blog/
-├── _config.yml            # 博客核心配置（标题、URL、主题等）
+├── _config.yml            # Hexo 主配置（标题、URL、主题入口等）
+├── _config.fluid.yml      # Fluid 主题配置（导航、头图、副标题、关于页等）
 ├── package.json           # 依赖与 npm scripts
 ├── scaffolds/             # 文章/页面模板（front-matter 骨架）
 ├── source/
 │   ├── _posts/            # 你的 Markdown 文章都在这里
+│   ├── about/             # 关于页
 │   └── ...                # 其他自定义页面/资源
 ├── .github/workflows/
 │   └── deploy.yml         # GitHub Actions 自动构建发布工作流

@@ -86,9 +86,10 @@ exclude:
 ignore:
 
 # ========== 主题 ==========
-# 默认使用 landscape 主题，换主题只需改这一行 + npm install
-# 热门主题: hexo-theme-butterfly / hexo-theme-fluid / hexo-theme-next
-theme: landscape
+# 当前使用 Fluid 主题（现代化、深色模式、代码复制按钮）
+# 主题配置在根目录 _config.fluid.yml 中修改
+# 其他热门主题: hexo-theme-butterfly / hexo-theme-next
+theme: fluid
 
 # ========== 部署（可选，本地手动发布用） ==========
 # 推荐用 GitHub Actions 自动部署（.github/workflows/deploy.yml），无需配这里
@@ -99,8 +100,8 @@ theme: landscape
 #   branch: main
 
 # ========== 搜索插件配置 ==========
+# 输出路径需与 _config.fluid.yml 中 search.path 保持一致（/local-search.xml）
 search:
-  path: search.json
+  path: local-search.xml
   field: post
   content: true
-  format: html
