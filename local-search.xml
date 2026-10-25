@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  
+  
+  
+  <entry>
+    <title>Hexo 常用命令速查</title>
+    <link href="/2026/10/25/hexo-commands-cheatsheet/"/>
+    <url>/2026/10/25/hexo-commands-cheatsheet/</url>
+    
+    <content type="html"><![CDATA[<p>这篇是写给自己的备忘录，顺便测试一下代码高亮。</p><h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># 本地预览，默认 http://localhost:4000</span><br>npm run dev<br><br><span class="hljs-comment"># 写新文章（会在 source/_posts/ 生成 xxx.md）</span><br>npx hexo new <span class="hljs-string">&quot;文章标题&quot;</span><br><br><span class="hljs-comment"># 写新页面（如 关于我）</span><br>npx hexo new page <span class="hljs-string">&quot;about&quot;</span><br><br><span class="hljs-comment"># 草稿箱（source/_drafts/，默认不渲染）</span><br>npx hexo new draft <span class="hljs-string">&quot;草稿标题&quot;</span><br>npx hexo publish draft 草稿标题<br><br><span class="hljs-comment"># 生成静态文件到 public/ 目录</span><br>npm run build<br><br><span class="hljs-comment"># 一键清理缓存 + 构建 + 部署（需配置 _config.yml 的 deploy）</span><br>npm run deploy<br></code></pre></td></tr></table></figure><h2 id="文章-front-matter-模板"><a href="#文章-front-matter-模板" class="headerlink" title="文章 front-matter 模板"></a>文章 front-matter 模板</h2><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-meta">---</span><br><span class="hljs-attr">title:</span> <span class="hljs-string">文章标题</span><br><span class="hljs-attr">date:</span> <span class="hljs-number">2026-10-25 21:30:00</span><br><span class="hljs-attr">tags:</span> [<span class="hljs-string">Java</span>, <span class="hljs-string">后端</span>]<br><span class="hljs-attr">categories:</span> [<span class="hljs-string">技术</span>]<br><span class="hljs-attr">cover:</span> <span class="hljs-string">/images/cover.jpg</span>   <span class="hljs-comment"># 部分主题支持封面图</span><br><span class="hljs-meta">---</span><br></code></pre></td></tr></table></figure><h2 id="部署流程"><a href="#部署流程" class="headerlink" title="部署流程"></a>部署流程</h2><p>本地 <code>git push</code> → GitHub Actions 自动执行 <code>hexo generate</code> → 产物推送到 <code>gh-pages</code> 分支 → GitHub Pages 发布。全程无需人工干预。</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>建站记录</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Hexo</tag>
+      
+      <tag>工具</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Hello Hexo，博客开张</title>
+    <link href="/2026/10/25/hello-hexo/"/>
+    <url>/2026/10/25/hello-hexo/</url>
+    
+    <content type="html"><![CDATA[<p>写了十几年代码，一直觉得”写博客”这件事对程序员是刚需——不是写给谁看，而是把脑子里的碎片整理成结构的过程。今天终于把这个个人博客搭起来了，用 Hexo + GitHub Pages，写文章就是写 Markdown，<code>git push</code> 之后自动发布，符合程序员的一切直觉。</p><h2 id="这个博客的技术栈"><a href="#这个博客的技术栈" class="headerlink" title="这个博客的技术栈"></a>这个博客的技术栈</h2><ul><li><strong>Hexo 7</strong>：Node.js 静态博客生成器，模板语法和 Vue 很像，上手零成本</li><li><strong>GitHub Pages</strong>：免费托管，全球可访问</li><li><strong>GitHub Actions</strong>：push 自动构建发布，不用在本地敲部署命令</li><li><strong>landscape 主题</strong>：默认主题，清爽够用，后面看腻了再换</li></ul><h2 id="接下来会写什么"><a href="#接下来会写什么" class="headerlink" title="接下来会写什么"></a>接下来会写什么</h2><ul><li>Java 后端开发中踩过的坑和最佳实践</li><li>二十年间技术演进的个人观察（从 Struts 到 Spring Boot 到云原生）</li><li>一些工具链和工作流的心得</li></ul><p>先立个 flag：至少月更。第一个月就撞墙的话……那就当没说过。</p><blockquote><p>种一棵树最好的时间是十年前，其次是现在。写博客也一样。</p></blockquote>]]></content>
+    
+    
+    <categories>
+      
+      <category>建站记录</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Hexo</tag>
+      
+      <tag>博客</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>新文章测试20261025</title>
+    <link href="/2026/10/25/%E6%96%B0%E6%96%87%E7%AB%A0%E6%B5%8B%E8%AF%9520261025/"/>
+    <url>/2026/10/25/%E6%96%B0%E6%96%87%E7%AB%A0%E6%B5%8B%E8%AF%9520261025/</url>
+    
+    <content type="html"><![CDATA[<p>测试新建一篇文章上传</p><h2 id="测试文章标题"><a href="#测试文章标题" class="headerlink" title="测试文章标题"></a>测试文章标题</h2><ul><li>测试代码快</li><li><strong>Hexo 7</strong>：Node.js 静态博客生成器，模板语法和 Vue 很像，上手零成本</li></ul>]]></content>
+    
+    
+    <categories>
+      
+      <category>建站记录</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>博客</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  
+</search>
