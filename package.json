@@ -1,0 +1,29 @@
+{
+  "name": "my-blog",
+  "version": "1.0.0",
+  "private": true,
+  "description": "基于 Hexo 的个人博客，通过 GitHub Actions 自动部署到 GitHub Pages",
+  "scripts": {
+    "dev": "hexo server",
+    "build": "hexo clean && hexo generate",
+    "new": "hexo new",
+    "clean": "hexo clean",
+    "deploy": "hexo clean && hexo generate && hexo deploy"
+  },
+  "hexo": {
+    "version": "7.3.0"
+  },
+  "dependencies": {
+    "hexo": "^7.3.0",
+    "hexo-theme-landscape": "^1.0.0",
+    "hexo-renderer-marked": "^6.0.0",
+    "hexo-renderer-ejs": "^2.0.0",
+    "hexo-generator-index": "^4.0.0",
+    "hexo-generator-archive": "^2.0.0",
+    "hexo-generator-category": "^2.0.0",
+    "hexo-generator-tag": "^2.0.0",
+    "hexo-generator-search": "^2.4.0",
+    "hexo-server": "^3.0.0",
+    "hexo-deployer-git": "^4.0.0"
+  }
+}

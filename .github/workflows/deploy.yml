@@ -1,0 +1,42 @@
+# Hexo 博客自动构建 & 发布到 GitHub Pages
+# 触发条件：main 分支有 push，或手动触发
+# 流程：安装依赖 → 构建静态文件 → 推送到 gh-pages 分支
+name: Build and Deploy Hexo Blog
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+# 允许 Actions 写入 gh-pages 分支
+permissions:
+  contents: write
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 检出源码
+        uses: actions/checkout@v4
+
+      - name: 安装 Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      # 没有 package-lock.json 时 npm ci 会失败，自动降级为 npm install
+      - name: 安装依赖
+        run: npm ci || npm install
+
+      - name: 构建 Hexo
+        run: npx hexo clean && npx hexo generate
+
+      - name: 发布到 GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./public
+          publish_branch: gh-pages
+          user_name: 'github-actions[bot]'
+          user_email: 'github-actions[bot]@users.noreply.github.com'
