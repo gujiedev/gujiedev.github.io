@@ -1,0 +1,21 @@
+# 依赖（通过 npm install 重新生成）
+node_modules/
+
+# 构建产物（由 hexo generate / GitHub Actions 生成）
+public/
+.deploy_git/
+
+# Hexo 缓存
+db.json
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# 系统文件
+.DS_Store
+Thumbs.db
+
+# 编辑器
+.vscode/
+.idea/
